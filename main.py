@@ -55,9 +55,6 @@ def send_players_info(update, context):
     """Finds players by their name and sends basic info"""
     player_name = update.message.text
     update.message.reply_text('This might take several seconds...')
-    if player_name == 'Beka':
-        update.message.reply_text('Бека - 12Д. Верная рука. Позишн - позишнлес.')
-        return ConversationHandler.END
     try:
         players = api_calls.get_players(player_name)
         if players:  # if api call returned at least one player
